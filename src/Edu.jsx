@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import { useState } from "react";
 import "./Edu.css";
 
 const sections = [
@@ -59,7 +60,9 @@ function Edu() {
   const filteredSections =
     activeTab === "all"
       ? sections
-      : sections.filter((item) => item.category === activeTab);
+      : sections.filter(
+          (item) => item.category === activeTab
+        );
 
   return (
     <main className="center-container">
@@ -80,21 +83,27 @@ function Edu() {
 
         <div className="center-hero__stats">
           <div className="stat-card">
-            <span className="stat-card__val">განათლება</span>
+            <span className="stat-card__val">
+              განათლება
+            </span>
             <span className="stat-card__lbl">
               ცოდნისა და უნარების განვითარება
             </span>
           </div>
 
           <div className="stat-card">
-            <span className="stat-card__val">ხელმისაწვდომობა</span>
+            <span className="stat-card__val">
+              ხელმისაწვდომობა
+            </span>
             <span className="stat-card__lbl">
               სწავლა საცხოვრებელ ადგილთან ახლოს
             </span>
           </div>
 
           <div className="stat-card">
-            <span className="stat-card__val">განვითარება</span>
+            <span className="stat-card__val">
+              განვითარება
+            </span>
             <span className="stat-card__lbl">
               პროფესიული და სოციალური შესაძლებლობები
             </span>
@@ -103,11 +112,15 @@ function Edu() {
       </header>
 
       <section className="center-section">
-        <h2 className="section-title">პროექტის იდეა</h2>
+        <h2 className="section-title">
+          პროექტის იდეა
+        </h2>
 
         <div className="bento-grid">
           <article className="bento-card bento-card--featured">
-            <span className="bento-card__tag">მთავარი მიზანი</span>
+            <span className="bento-card__tag">
+              მთავარი მიზანი
+            </span>
 
             <h3>
               განათლებისა და ციფრული რესურსების ხელმისაწვდომობა
@@ -123,9 +136,13 @@ function Edu() {
           </article>
 
           <article className="bento-card">
-            <span className="bento-card__tag">საჭიროება</span>
+            <span className="bento-card__tag">
+              საჭიროება
+            </span>
 
-            <h3>სწავლის ბარიერების შემცირება</h3>
+            <h3>
+              სწავლის ბარიერების შემცირება
+            </h3>
 
             <p>
               ადგილობრივი სასწავლო სივრცე შეამცირებს ახმეტაში
@@ -135,9 +152,13 @@ function Edu() {
           </article>
 
           <article className="bento-card">
-            <span className="bento-card__tag">საზოგადოებრივი სარგებელი</span>
+            <span className="bento-card__tag">
+              საზოგადოებრივი სარგებელი
+            </span>
 
-            <h3>თემის გაძლიერება</h3>
+            <h3>
+              თემის გაძლიერება
+            </h3>
 
             <p>
               ცენტრი ხელს შეუწყობს ცოდნის გაზიარებას, პროფესიულ
@@ -149,11 +170,19 @@ function Edu() {
       </section>
 
       <section className="center-section">
-        <h2 className="section-title">რას მოიცავს პროექტი?</h2>
+        <h2 className="section-title">
+          რას მოიცავს პროექტი?
+        </h2>
 
         <div className="tripartite-grid">
           <article className="tripartite-card">
-            <div className="tripartite-card__num">01</div>
+            <div
+              className="tripartite-card__num"
+              aria-hidden="true"
+            >
+              01
+            </div>
+
             <h3>სასწავლო სივრცე</h3>
 
             <ul>
@@ -165,19 +194,35 @@ function Edu() {
           </article>
 
           <article className="tripartite-card">
-            <div className="tripartite-card__num">02</div>
+            <div
+              className="tripartite-card__num"
+              aria-hidden="true"
+            >
+              02
+            </div>
+
             <h3>საგანმანათლებლო აქტივობები</h3>
 
             <ul>
               <li>ციფრული წიგნიერება</li>
-              <li>კომპიუტერისა და ონლაინ სერვისების გამოყენება</li>
-              <li>პროფესიული განათლების შესახებ ინფორმირება</li>
+              <li>
+                კომპიუტერისა და ონლაინ სერვისების გამოყენება
+              </li>
+              <li>
+                პროფესიული განათლების შესახებ ინფორმირება
+              </li>
               <li>კარიერული განვითარების ხელშეწყობა</li>
             </ul>
           </article>
 
           <article className="tripartite-card">
-            <div className="tripartite-card__num">03</div>
+            <div
+              className="tripartite-card__num"
+              aria-hidden="true"
+            >
+              03
+            </div>
+
             <h3>თანამშრომლობა</h3>
 
             <ul>
@@ -196,7 +241,11 @@ function Edu() {
             მიზნები და მოსალოდნელი შედეგები
           </h2>
 
-          <div className="tab-filters">
+          <div
+            className="tab-filters"
+            role="group"
+            aria-label="შედეგების კატეგორიის ფილტრი"
+          >
             {filters.map((filter) => (
               <button
                 key={filter.id}
@@ -213,22 +262,34 @@ function Edu() {
           </div>
         </div>
 
-        <div className="results-grid">
+        <div className="results-grid" aria-live="polite">
           {filteredSections.map((item) => (
-            <article className="result-card" key={item.id}>
+            <article
+              className="result-card"
+              key={item.id}
+            >
               <span className="result-card__badge">
                 {item.badge}
               </span>
 
               <h3>{item.title}</h3>
+
               <p>{item.desc}</p>
             </article>
           ))}
         </div>
+
+        {filteredSections.length === 0 && (
+          <p className="empty-state">
+            ამ კატეგორიაში ინფორმაცია ჯერ არ არის.
+          </p>
+        )}
       </section>
 
       <footer className="center-footer">
-        <h2>ცოდნა ქმნის ახალ შესაძლებლობებს</h2>
+        <h2>
+          ცოდნა ქმნის ახალ შესაძლებლობებს
+        </h2>
 
         <p>
           პროექტის შემდგომი განვითარება დაეფუძნება თემის საჭიროებებს,
