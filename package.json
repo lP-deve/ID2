@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "ideas",
+=======
+  "name": "park",
+>>>>>>> e8ebf9927c3a207eb61532fcded1cd03be2cd8ee
   "private": true,
   "version": "0.0.0",
   "type": "module",
