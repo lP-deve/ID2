@@ -11,8 +11,8 @@
 
   /* Text colors */
   --text-primary: #182338;
-  --text-secondary: #566176;
-  --text-muted: #707b8e;
+  --text-secondary: #46536a;
+  --text-muted: #66738a;
   --text-heading: #17243a;
 
   /* Accent colors */
@@ -39,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -46,6 +47,8 @@ body {
   background: var(--bg-deep);
   color: var(--text-primary);
   font-family: var(--font-family);
+  font-size: 18px;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -57,7 +60,7 @@ body {
   max-width: 1900px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: clamp(1.25rem, 4vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 4rem);
 
   background:
     radial-gradient(
@@ -74,7 +77,30 @@ body {
 
   color: var(--text-primary);
   font-family: var(--font-family);
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.center-container p,
+.center-container li {
+  color: var(--text-secondary);
+}
+
+.center-container strong,
+.center-container b {
+  color: #202c41;
+  font-weight: 750;
+}
+
+.center-container a {
+  color: #315fc6;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--transition-smooth);
+}
+
+.center-container a:hover {
+  color: #244a9f;
 }
 
 /* =========================
@@ -87,8 +113,8 @@ body {
   isolation: isolate;
   text-align: center;
 
-  padding: clamp(2.5rem, 6vw, 5rem)
-    clamp(1.25rem, 4vw, 3.5rem);
+  padding: clamp(3rem, 6vw, 5.5rem)
+    clamp(1.5rem, 4vw, 3.5rem);
 
   margin-bottom: clamp(3rem, 6vw, 5rem);
 
@@ -129,7 +155,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  padding: 0.5rem 1.1rem;
+  padding: 0.65rem 1.25rem;
   margin-bottom: 1.5rem;
 
   background: #edf2ff;
@@ -137,16 +163,16 @@ body {
   border-radius: 999px;
 
   color: #294fae;
-
-  font-size: 0.76rem;
+  font-size: 0.9rem;
   font-weight: 750;
-  letter-spacing: 1.1px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  line-height: 1.5;
 }
 
 .center-hero__title {
-  max-width: 1000px;
-  margin: 0 auto 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
 
   background: linear-gradient(
     120deg,
@@ -158,23 +184,24 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  font-size: clamp(2.1rem, 5vw, 4rem);
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
   font-weight: 850;
   line-height: 1.2;
   letter-spacing: -1.5px;
 
+  height: auto;
+  overflow-wrap: break-word;
   text-wrap: balance;
 }
 
 .center-hero__subtitle {
-  max-width: 750px;
-  margin: 0 auto 2.75rem;
+  max-width: 850px;
+  margin: 0 auto 3rem;
 
   color: #4e596d;
-
-  font-size: clamp(0.95rem, 1.5vw, 1.12rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
   font-weight: 450;
-  line-height: 1.85;
+  line-height: 1.9;
 
   text-wrap: pretty;
 }
@@ -184,7 +211,7 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 
-  max-width: 1050px;
+  max-width: 1100px;
   margin: 0 auto;
   padding-top: 2rem;
 
@@ -196,26 +223,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
+  gap: 0.45rem;
 
-  padding: 1rem;
+  padding: 1.25rem 1rem;
 }
 
 .stat-card__val {
   margin-bottom: 0.2rem;
-
   color: #315fc6;
 
-  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 850;
-  line-height: 1.2;
+  line-height: 1.25;
   font-variant-numeric: tabular-nums;
 }
 
 .stat-card__lbl {
   color: #566176;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
+  line-height: 1.7;
   text-align: center;
 }
 
@@ -224,23 +251,23 @@ body {
 ========================= */
 
 .center-section {
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+  margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
 }
 
 .section-title {
   position: relative;
 
-  margin: 0 0 1.8rem;
-  padding-left: 1rem;
+  margin: 0 0 2rem;
+  padding-left: 1.1rem;
 
-  border-left: 4px solid var(--accent-gold);
+  border-left: 5px solid var(--accent-gold);
 
   color: #17243a;
 
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 800;
   line-height: 1.4;
-  letter-spacing: -0.45px;
+  letter-spacing: -0.5px;
 }
 
 /* =========================
@@ -258,7 +285,7 @@ body {
   min-width: 0;
   overflow: hidden;
 
-  padding: clamp(1.4rem, 3vw, 2.25rem);
+  padding: clamp(1.6rem, 3vw, 2.5rem);
 
   background: linear-gradient(
     145deg,
@@ -293,24 +320,24 @@ body {
 
 .bento-card__tag {
   display: inline-block;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 
   color: #315fc6;
-
-  font-size: 0.74rem;
+  font-size: 0.9rem;
   font-weight: 800;
-  letter-spacing: 1.1px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  line-height: 1.5;
 }
 
 .bento-card h3 {
-  margin: 0 0 0.85rem;
+  margin: 0 0 1rem;
 
   color: #17243a;
 
-  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
   font-weight: 800;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .bento-card p {
@@ -318,9 +345,9 @@ body {
 
   color: #4e596d;
 
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 450;
-  line-height: 1.85;
+  line-height: 1.9;
 }
 
 /* =========================
@@ -338,7 +365,7 @@ body {
   overflow: hidden;
   min-width: 0;
 
-  padding: 2rem;
+  padding: 2.25rem;
 
   background: #ffffff;
   border: 1px solid var(--border-subtle);
@@ -359,7 +386,7 @@ body {
 
   color: rgba(49, 95, 198, 0.12);
 
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 900;
   line-height: 1;
 
@@ -369,37 +396,37 @@ body {
 .tripartite-card h4 {
   position: relative;
 
-  margin: 0 0 1rem;
+  margin: 0 0 1.15rem;
 
   color: #294fae;
 
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .tripartite-card p {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.9rem;
 
   color: #4e596d;
 
-  font-size: 0.93rem;
+  font-size: 1.05rem;
   font-weight: 450;
-  line-height: 1.85;
+  line-height: 1.9;
 }
 
 .tripartite-card ul {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: 1.4rem;
 
   color: #4e596d;
 
-  font-size: 0.93rem;
-  line-height: 1.85;
+  font-size: 1.05rem;
+  line-height: 1.9;
 }
 
 .tripartite-card li {
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.65rem;
   padding-left: 0.2rem;
 }
 
@@ -416,15 +443,15 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.25rem;
 
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .tab-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.65rem;
 }
 
 .tab-btn {
@@ -432,7 +459,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  padding: 0.65rem 1rem;
+  padding: 0.8rem 1.15rem;
 
   background: #ffffff;
   border: 1px solid #dce3ed;
@@ -441,8 +468,9 @@ body {
   color: #445168;
 
   font-family: inherit;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
+  line-height: 1.5;
 
   cursor: pointer;
 
@@ -482,7 +510,7 @@ body {
 .result-card {
   min-width: 0;
 
-  padding: 1.8rem;
+  padding: 2rem;
 
   background: #ffffff;
   border: 1px solid var(--border-subtle);
@@ -499,8 +527,8 @@ body {
 .result-card__badge {
   display: inline-block;
 
-  margin-bottom: 0.9rem;
-  padding: 0.3rem 0.65rem;
+  margin-bottom: 1rem;
+  padding: 0.4rem 0.75rem;
 
   background: #edf2ff;
   border: 1px solid #d7e2ff;
@@ -508,18 +536,19 @@ body {
 
   color: #294fae;
 
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  letter-spacing: 0.45px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
 .result-card h4 {
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.8rem;
 
   color: #17243a;
 
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 800;
   line-height: 1.5;
 }
@@ -529,9 +558,9 @@ body {
 
   color: #4e596d;
 
-  font-size: 0.93rem;
+  font-size: 1.08rem;
   font-weight: 450;
-  line-height: 1.85;
+  line-height: 1.9;
 }
 
 /* =========================
@@ -543,7 +572,7 @@ body {
   overflow: hidden;
 
   margin-top: 4rem;
-  padding: clamp(2rem, 5vw, 3.5rem) 1.5rem;
+  padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
 
   background:
     radial-gradient(
@@ -562,66 +591,289 @@ body {
 }
 
 .center-footer h3 {
-  margin: 0 0 0.8rem;
+  margin: 0 0 1rem;
 
   color: #294fae;
 
-  font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
   font-weight: 800;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .center-footer p {
-  max-width: 650px;
+  max-width: 750px;
   margin: 0 auto;
 
   color: #4e596d;
 
-  font-size: 0.95rem;
-  line-height: 1.85;
-}
-
-
-
-.center-container p,
-.center-container li {
-  color: var(--text-secondary);
-}
-
-.center-container strong,
-.center-container b {
-  color: #202c41;
-  font-weight: 750;
-}
-
-.center-container a {
-  color: #315fc6;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-
-  transition: color var(--transition-smooth);
-}
-
-.center-container a:hover {
-  color: #244a9f;
-}
-
-/* Preserve intentional component colors */
-.center-hero__title {
-  background: linear-gradient(120deg, #1a1a1c 15%, #101011 85%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  height:4em
-}
-
-.center-hero__badge,
-.result-card__badge {
-  color: #294fae;
+  font-size: 1.1rem;
+  line-height: 1.9;
 }
 
 /* =========================
-   10. HOVER EFFECTS
+   9. TABLETS
+========================= */
+
+@media (max-width: 1000px) {
+  .center-container {
+    padding: 2rem;
+  }
+
+  .tripartite-grid,
+  .results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tripartite-card {
+    padding: 1.8rem;
+  }
+
+  .result-card {
+    padding: 1.7rem;
+  }
+
+  .center-hero__title {
+    font-size: clamp(2.5rem, 5.5vw, 4rem);
+  }
+}
+
+/* =========================
+   10. MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  .center-container {
+    padding: 1.25rem 1rem;
+    font-size: 17px;
+  }
+
+  .center-hero {
+    padding: 3rem 1.25rem;
+    margin-bottom: 3rem;
+    border-radius: 22px;
+  }
+
+  .center-hero__title {
+    font-size: clamp(2.3rem, 8vw, 3.2rem);
+    line-height: 1.22;
+    letter-spacing: -0.8px;
+    height: auto;
+  }
+
+  .center-hero__subtitle {
+    margin-bottom: 2.25rem;
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .center-hero__stats {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 0.8rem 0.5rem;
+  }
+
+  .stat-card__val {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+
+  .stat-card__lbl {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .center-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.45;
+  }
+
+  .bento-grid,
+  .tripartite-grid,
+  .results-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .bento-card--featured {
+    grid-column: auto;
+  }
+
+  .bento-card,
+  .tripartite-card,
+  .result-card {
+    padding: 1.6rem;
+    border-radius: 18px;
+  }
+
+  .bento-card__tag,
+  .result-card__badge {
+    font-size: 0.85rem;
+  }
+
+  .bento-card h3 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .bento-card p,
+  .tripartite-card p,
+  .tripartite-card ul,
+  .result-card p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  .tripartite-card h4,
+  .result-card h4 {
+    font-size: 1.4rem;
+  }
+
+  .section-header-flex {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tab-filters {
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .tab-btn {
+    max-width: 100%;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .center-footer {
+    margin-top: 3rem;
+    padding: 2.5rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .center-footer h3 {
+    font-size: 1.65rem;
+  }
+
+  .center-footer p {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================
+   11. SMALL MOBILE
+========================= */
+
+@media (max-width: 420px) {
+  .center-container {
+    padding: 1rem 0.75rem;
+    font-size: 16px;
+  }
+
+  .center-hero {
+    padding: 2.5rem 1rem;
+    border-radius: 18px;
+  }
+
+  .center-hero__badge {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.7px;
+  }
+
+  .center-hero__title {
+    font-size: 2.15rem;
+    line-height: 1.25;
+    letter-spacing: -0.7px;
+    height: auto;
+  }
+
+  .center-hero__subtitle {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .center-hero__stats {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .stat-card {
+    padding: 0.7rem 0.4rem;
+  }
+
+  .stat-card__val {
+    font-size: 1.8rem;
+  }
+
+  .stat-card__lbl {
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    padding-left: 0.8rem;
+    font-size: 1.55rem;
+  }
+
+  .bento-card,
+  .tripartite-card,
+  .result-card {
+    padding: 1.3rem;
+    border-radius: 16px;
+  }
+
+  .bento-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .bento-card p,
+  .tripartite-card p,
+  .tripartite-card ul,
+  .result-card p {
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .tripartite-card h4,
+  .result-card h4 {
+    font-size: 1.3rem;
+  }
+
+  .tab-filters {
+    gap: 0.4rem;
+  }
+
+  .tab-btn {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .center-footer {
+    padding: 2rem 1rem;
+  }
+
+  .center-footer h3 {
+    font-size: 1.45rem;
+  }
+
+  .center-footer p {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   12. ACCESSIBILITY
 ========================= */
 
 @media (hover: hover) and (pointer: fine) {
@@ -644,181 +896,6 @@ body {
     box-shadow: 0 16px 36px rgba(25, 42, 72, 0.075);
   }
 }
-
-/* =========================
-   11. TABLETS
-========================= */
-
-@media (max-width: 1000px) {
-  .tripartite-grid,
-  .results-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .center-container {
-    padding: 2rem;
-  }
-  
-}
-
-/* =========================
-   12. MOBILE
-========================= */
-
-@media (max-width: 768px) {
-  .center-container {
-    padding: 1.25rem 1rem;
-  }
-
-  .center-hero {
-    padding: 2.75rem 1.25rem;
-    margin-bottom: 3rem;
-    border-radius: 22px;
-  }
-
-  .center-hero__title {
-    font-size: clamp(2rem, 7vw, 2.7rem);
-    letter-spacing: -0.8px;
-  }
-
-  .center-hero__subtitle {
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
-  }
-
-  .center-hero__stats {
-    gap: 0.25rem;
-    padding-top: 1.25rem;
-  }
-  .center-hero__stats {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1rem;
-
-  max-width: 1050px;
-  margin: 0 auto;
-  padding-top: 2rem;
-
-  border-top: 1px solid var(--border-subtle);
-}
-
-  .stat-card {
-    padding: 0.65rem 0.2rem;
-  }
-
-  .stat-card__val {
-    font-size: clamp(1.35rem, 5vw, 1.8rem);
-  }
-
-  .stat-card__lbl {
-    font-size: 0.75rem;
-    line-height: 1.5;
-  }
-
-  .bento-grid,
-  .tripartite-grid,
-  .results-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
-  }
-
-  .bento-card--featured {
-    grid-column: auto;
-  }
-
-  .bento-card,
-  .tripartite-card,
-  .result-card {
-    padding: 1.5rem;
-  }
-
-  .section-header-flex {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .tab-filters {
-    width: 100%;
-    gap: 0.5rem;
-  }
-
-  .tab-btn {
-    max-width: 100%;
-    padding: 0.6rem 0.85rem;
-  }
-
-  .section-title {
-    margin-bottom: 1.4rem;
-  }
-
-  .center-footer {
-    margin-top: 3rem;
-    border-radius: 20px;
-  }
-}
-
-/* =========================
-   13. SMALL MOBILE
-========================= */
-
-@media (max-width: 420px) {
-  .center-container {
-    padding: 1rem 0.75rem;
-  }
-
-  .center-hero {
-    padding: 2.25rem 1rem;
-    border-radius: 18px;
-  }
-
-  .center-hero__title {
-    font-size: 1.9rem;
-    letter-spacing: -0.7px;
-  }
-
-  .center-hero__badge {
-    font-size: 0.68rem;
-    letter-spacing: 0.8px;
-  }
-
-  .center-hero__stats {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-
-  .stat-card {
-    padding: 0.6rem;
-  }
-
-  .stat-card__val {
-    font-size: 1.7rem;
-  }
-
-  .bento-card,
-  .tripartite-card,
-  .result-card {
-    padding: 1.25rem;
-    border-radius: 16px;
-  }
-
-  .section-title {
-    font-size: 1.35rem;
-  }
-
-  .tab-filters {
-    gap: 0.4rem;
-  }
-
-  .tab-btn {
-    font-size: 0.8rem;
-  }
-  .center-hero__title {
-    height: 6em;
-}
-}
-/* =========================
-   14. ACCESSIBILITY
-========================= */
 
 @media (prefers-reduced-motion: reduce) {
   *,
